@@ -1,3 +1,3 @@
 FROM tomcat:latest
-MAINTAINER RAKESH-IRUKULA
+MAINTAINER RAKESHIRUKULA
 COPY ./*.war /usr/local/tomcat/webapps/ROOT.war
