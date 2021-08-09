@@ -30,7 +30,7 @@
     - 
       args: 
         chdir: //home//ansadmin
-      command: "docker run -d --name loginstudent -p 8080:8080 loginstudent2021"
+      command: "docker run -d --name loginstudent -p 8080:8080 rakeshirukula/loginstudent2021:latest"
       ignore_errors: true
       name: "docker run"
 
