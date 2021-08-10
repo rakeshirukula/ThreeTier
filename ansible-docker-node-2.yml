@@ -1,0 +1,33 @@
+--- 
+-  hosts: all 
+   gather_facts: false 
+   tasks:
+     - name : stop containers 
+       command : docker stop loginstudent
+       ignore_errors : true 
+       args: 
+         chdir: //home//ansadmin
+
+     - name : remove containers 
+       command : docker rm loginstudent
+       ignore_errors : true 
+       args: 
+         chdir: //home//ansadmin
+
+     - name : remove image 
+       command : docker rmi rakeshirukula/loginstudent2021:latest
+       ignore_errors : true 
+       args: 
+         chdir: //home//ansadmin
+
+     - name : pull image
+       command : docker pull rakeshirukula/loginstudent2021:latest
+       ignore_errors : true 
+       args: 
+         chdir: //home//ansadmin
+
+     - name : run container
+       command : docker run -d --name loginstudent -p 8080:8080 rakeshirukula/loginstudent2021:latest
+       ignore_errors : true 
+       args: 
+         chdir: //home//ansadmin
