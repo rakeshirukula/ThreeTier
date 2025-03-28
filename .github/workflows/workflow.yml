@@ -38,5 +38,19 @@ jobs:
       - name: "build"
         run: "mvn clean package"
 
+      - name: "build image and tags"
+        run: |
+          docker build -t decadetomcat .
+          docker tag decadetomcat rakeshirukula/decadetomcat
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: "pish"
+        run: |
+          docker push rakeshirukula/decadetomcat
 
         
