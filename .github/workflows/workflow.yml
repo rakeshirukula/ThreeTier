@@ -34,12 +34,9 @@ jobs:
           echo "Current Directory: $(pwd)"
           echo "Files in Current Directory:"
           ls -l
-
-     # - name: "build"
-    #    run: "cd ThreeTier/"
         
-      #- name: "build"
-     #   run: "mvn clean package"
+      - name: "build"
+        run: "mvn clean package"
 
 
         
