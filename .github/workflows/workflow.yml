@@ -12,15 +12,14 @@ on:
         options:
         - Ubuntu
         - macOS
-        
+
 jobs:
- checkoutcode:
-    runs-on:
-      group: Ubuntu
-    container:
-      image: python:3.10-slim
-    timeout-minutes: 30
+  checkoutcode:
+    runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
       - name: "install java"
         run: "sudo apt-get install openjdk-11-jdk -y"
 
@@ -30,9 +29,14 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: "build"
-        run: "cd ThreeTier/"
+      - name: "pwd"
+        run: "echo $PWD"
+
+     # - name: "build"
+    #    run: "cd ThreeTier/"
         
-      - name: "build"
-        run: "mvn clean package"
+      #- name: "build"
+     #   run: "mvn clean package"
+
+
         
