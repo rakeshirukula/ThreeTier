@@ -3,7 +3,8 @@ name: GitHub Actions Demo Rakesh
 on:
   push:
     branches:
-      - main
+    - dev
+    
   #workflow_dispatch:
     #inputs:
       #chosen-os:
