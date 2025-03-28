@@ -15,7 +15,7 @@ on:
         #- macOS
 
 jobs:
-  checkoutcode:
+  docker-build-push:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -52,6 +52,7 @@ jobs:
 
       - name: "push"
         run: |
+          docker images
           docker push rakeshirukula/decadetomcat-${{ github.run_number }}
 
       - name: Output Run ID
